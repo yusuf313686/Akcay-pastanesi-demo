@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<!--
-═══════════════════════════════════════════════════════════════
-  AKÇAY PASTANESİ DEMO — Yusuf Yozgatlı
-  Salihli/Manisa · @akcay_pastanesii
-═══════════════════════════════════════════════════════════════
--->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title id="pageTitle">Pastane</title>
+
+<meta property="og:title" content="Akçay Pastanesi">
+<meta property="og:description" content="Kişiye Özel Butik Tasarımlar">
+<meta property="og:image" content="https://yusuf313686.github.io/Akcay-pastanesi-demo/img/logo.jpg">
+<meta property="og:type" content="website">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Mulish:wght@400;600;700;800&display=swap" rel="stylesheet">
 
 <script>
-/* ═══════════ CONFIG — TEK DEĞİŞECEK YER ═══════════ */
+/* ═══════════ CONFIG ═══════════ */
 const CONFIG = {
-  logo: "logo.jpg",
+  logo: "img/logo.jpg",
   name: "Akçay Pastanesi",
-  tagline: "Sıradışı butik pastalar",
+  tagline: "Kişiye Özel Butik Tasarımlar",
   about: "Manisa Salihli'nin sevilen pastanesi Akçay Pastanesi, sıradışı butik pastaları ve her gün taze hazırlanan günlük ürünleriyle hizmetinizde. Doğum günü, baby shower, nişan ve her özel gününüz için size özel tasarım pastalar hazırlıyoruz.",
 
   phone: "+902367123663",
-  whatsapp: "905421358806",   // ⚠️ YUSUF'UN NUMARASINI YAZ — satış sonrası işletmeninki
+  whatsapp: "905421358806", // ⚠️ YUSUF'UN DEMO NUMARASI
   instagram: "akcay_pastanesii",
 
   colors: {
@@ -34,12 +34,27 @@ const CONFIG = {
     text:     "#1A1A1A"
   },
 
+  decor: {
+    img: "",
+    opacity: 0.18,
+    side: "both"
+  },
+
+  priceUpdated: "06.07.2026",
+  cartEnabled: true,
+  announcement: "",
+  vacationNote: "",
+  vacationLock: false,
+  intro: false,
+  particles: "auto",
+  faq: [],
+
   products: [
-    { name: "Sevgililer Pastası", desc: "El yapımı figürler ve kırmızı kurdelelerle özel tasarım", img: "sevgililer.jpg" },
-    { name: "Doğum Günü Pastası", desc: "Çiçek detaylı, isme özel butik tasarım", img: "dogumgunu.jpg" },
-    { name: "Baby Shower Pastası", desc: "Bebek temalı, konsepte uygun özel tasarım", img: "babyshower.jpg" },
-    { name: "Özel Tasarım Pasta", desc: "Altın detaylı, zarif çiçek işlemeli pasta", img: "ozel-tasarim.jpg" },
-    { name: "Çocuk Doğum Günü Pastası", desc: "Figürlü, temalı ve renkli çocuk pastaları", img: "cocuk-pasta.jpg" }
+    { name: "Sevgililer Pastası", desc: "El yapımı figürler ve kırmızı kurdelelerle özel tasarım", img: "img/sevgililer.jpg" },
+    { name: "Doğum Günü Pastası", desc: "Çiçek detaylı, isme özel butik tasarım", img: "img/dogumgunu.jpg" },
+    { name: "Baby Shower Pastası", desc: "Bebek temalı, konsepte uygun özel tasarım", img: "img/babyshower.jpg" },
+    { name: "Özel Tasarım Pasta", desc: "Altın detaylı, zarif çiçek işlemeli pasta", img: "img/ozel-tasarim.jpg" },
+    { name: "Çocuk Doğum Günü Pastası", desc: "Figürlü, temalı ve renkli çocuk pastaları", img: "img/cocuk-pasta.jpg" }
   ],
 
   menuNote: "Ürünler site yayına alınınca eklenecektir — aşağıdakiler örnektir",
@@ -83,20 +98,34 @@ const CONFIG = {
 
   orderForm: {
     portions: ["4", "6", "8", "10", "12", "15", "20"],
+    weddingPortions: ["50", "100", "150", "200"],
+    portionPrices: { 
+      "4": 500, "6": 700, "8": 900, "10": 1100, "12": 1300, "15": 1600, "20": 2100,
+      "50": 5500, "100": 11000, "150": 16500, "200": 22000
+    },
+    flavorExtras: {
+      "Krokan": 80,
+      "Karışık Meyve": 50,
+      "Fındık": 60
+    },
+    priceNote: "Son fiyata şef karar verir, tasarım zorluğuna göre değişebilir.",
+    photoNote: "Aklınızdaki pastanın fotoğrafını sipariş sonrası WhatsApp üzerinden göndermeyi unutmayın!",
+    rules: [
+        "Siparişler en az 3 gün önceden verilmelidir.",
+        "Fiyat pastanın büyüklüğüne ve tasarımına göre belirlenir.",
+        "Sipariş iptalinde ücret iadesi yapılmaz."
+    ],
+    minDaysAhead: 3, 
     flavors: [
       "Çilek", "Muz", "Vişne", "Frambuaz",
       "Orman Meyvesi", "Karadut", "Karışık Meyve",
-      "Beyaz Çikolata", "Bitter Çikolata", "Fındık"
+      "Beyaz Çikolata", "Bitter Çikolata", "Fındık", "Krokan"
     ],
     creams: ["Vanilya", "Çikolata", "Karamel", "Meyveli"],
-    notes: [
-      "Siparişler en az 2 gün önceden verilmelidir.",
-      "Fiyat pastanın büyüklüğüne ve tasarımına göre belirlenir.",
-      "Fotoğrafınızı WhatsApp üzerinden iletebilirsiniz."
-    ]
+    notes: []
   }
 };
-/* ═══════════ CONFIG SONU — aşağıya dokunma ═══════════ */
+/* ═══════════ CONFIG SONU ═══════════ */
 </script>
 
 <style>
@@ -164,6 +193,7 @@ header{
   transition:transform .2s ease, box-shadow .2s ease;
 }
 .btn:active{transform:scale(.97)}
+.btn-wa{background:#25D366;color:#fff;box-shadow:var(--shadow)}
 .btn-form{background:var(--accent);color:#fff;box-shadow:var(--shadow)}
 .btn-tel{background:transparent;color:var(--primary);border:2px solid var(--primary)}
 .hero .btn+.btn{margin-left:10px}
@@ -197,7 +227,7 @@ section{padding:56px 20px;max-width:1100px;margin:0 auto}
 .card-body{padding:18px 18px 20px;flex:1;display:flex;flex-direction:column;gap:8px}
 .card-body h3{font-family:var(--font-head);font-size:1.2rem;color:var(--secondary)}
 .card-body p{font-size:.92rem;opacity:.75;flex:1}
-.card-order{
+.card-wa{
   margin-top:6px;
   display:inline-flex;align-items:center;justify-content:center;gap:6px;
   min-height:48px;border-radius:10px;
@@ -206,7 +236,7 @@ section{padding:56px 20px;max-width:1100px;margin:0 auto}
   border:1.5px solid var(--accent);
   transition:background .2s;
 }
-.card-order:hover{background:var(--accent);color:#fff}
+.card-wa:hover{background:var(--accent);color:#fff}
 
 /* ---------- Dijital Menü ---------- */
 .menu-wrap{max-width:680px;margin:0 auto}
@@ -229,6 +259,10 @@ section{padding:56px 20px;max-width:1100px;margin:0 auto}
 .menu-desc{
   font-size:.82rem;opacity:.62;margin:-4px 0 6px;
   padding-left:2px;font-style:italic;
+}
+.menu-cal{
+  font-size:.78rem;opacity:.55;margin:-2px 0 6px;
+  padding-left:2px;font-weight:700;
 }
 .menu-note{
   text-align:center;font-size:.82rem;opacity:.6;margin-top:8px;
@@ -281,20 +315,229 @@ footer .credit{margin-top:18px;font-size:.8rem;opacity:.55}
 .wa-float:hover{transform:scale(1.08)}
 .wa-float svg{width:30px;height:30px}
 
+/* ---------- Kenar Dekoru (filigran) ---------- */
+.decor{
+  position:fixed;top:0;bottom:0;width:110px;
+  z-index:-1;pointer-events:none;
+  background-repeat:repeat-y;background-size:contain;
+  display:none;
+}
+.decor.left{left:0}
+.decor.right{right:0;transform:scaleX(-1)}
+@media (max-width:480px){ .decor{width:64px} }
+
+/* ---------- Sepet ---------- */
+.menu-ctrl{
+  display:inline-flex;align-items:center;gap:6px;
+  margin-left:10px;flex:none;
+}
+.menu-add,.menu-sub{
+  width:34px;height:34px;flex:none;
+  border-radius:50%;border:1.5px solid var(--primary);
+  background:#fff;color:var(--primary);
+  font-size:1.15rem;font-weight:800;line-height:1;
+  cursor:pointer;font-family:var(--font-body);
+  display:inline-flex;align-items:center;justify-content:center;
+  transition:background .15s;
+}
+.menu-add:active,.menu-sub:active{background:var(--primary);color:#fff}
+.menu-qty{
+  min-width:20px;text-align:center;
+  font-weight:800;color:var(--secondary);font-size:1rem;
+}
+.menu-ctrl .menu-sub,.menu-ctrl .menu-qty{display:none}
+.menu-ctrl.active .menu-sub{display:inline-flex}
+.menu-ctrl.active .menu-qty{display:inline-block}
+.cart-float{
+  position:fixed;right:18px;bottom:88px;z-index:100;
+  width:58px;height:58px;border-radius:50%;
+  background:var(--primary);color:#fff;border:none;cursor:pointer;
+  display:none;align-items:center;justify-content:center;
+  box-shadow:0 8px 24px rgba(0,0,0,.3);
+  transition:transform .2s;font-size:1.5rem;
+  padding:0 0 3px 4px;
+}
+.cart-float:hover{transform:scale(1.08)}
+.cart-badge{
+  position:absolute;top:-4px;right:-4px;
+  min-width:22px;height:22px;border-radius:11px;
+  background:var(--accent);color:#fff;
+  font-size:.75rem;font-weight:800;font-family:var(--font-body);
+  display:flex;align-items:center;justify-content:center;
+  padding:0 5px;border:2px solid var(--bg);
+}
+.cart-panel{
+  position:fixed;inset:0;z-index:200;
+  background:var(--bg);
+  overflow-y:auto;
+  padding:0 20px 40px;
+  transform:translateY(100%);
+  visibility:hidden;
+  transition:transform .35s ease, visibility .35s;
+}
+.cart-panel.open{
+  transform:translateY(0);
+  visibility:visible;
+}
+@keyframes badgePop{
+  0%{transform:scale(1)} 50%{transform:scale(1.45)} 100%{transform:scale(1)}
+}
+.cart-badge.pop{animation:badgePop .3s ease}
+.cart-head{
+  position:sticky;top:0;background:var(--bg);
+  display:flex;align-items:center;gap:12px;
+  padding:16px 0 12px;margin-bottom:8px;
+  border-bottom:2px solid var(--accent);z-index:5;
+}
+.cart-head h3{
+  font-family:var(--font-head);color:var(--primary);
+  font-size:1.4rem;
+}
+.cart-back{
+  width:42px;height:42px;flex:none;
+  border-radius:50%;border:1.5px solid var(--primary);
+  background:#fff;color:var(--primary);
+  font-size:1.3rem;font-weight:800;cursor:pointer;
+  display:inline-flex;align-items:center;justify-content:center;
+  font-family:var(--font-body);line-height:1;
+  padding:0 0 4px;
+}
+.cart-panel.dragging{transition:none}
+.cart-list{max-width:600px;margin:0 auto}
+.cart-item{
+  display:flex;align-items:center;gap:10px;
+  padding:13px 0;border-bottom:1px solid color-mix(in srgb, var(--text) 12%, transparent);
+  font-size:.98rem;
+}
+.cart-item .ci-name{flex:1;font-weight:700;min-width:0}
+.cart-item .ci-price{
+  font-weight:800;color:var(--secondary);
+  white-space:nowrap;font-size:.9rem;
+}
+.cart-qty{
+  display:flex;align-items:center;gap:6px;flex:none;
+}
+.cart-qty button{
+  width:32px;height:32px;border-radius:8px;border:1.5px solid var(--primary);
+  background:#fff;color:var(--primary);font-weight:800;font-size:1rem;
+  cursor:pointer;font-family:var(--font-body);
+}
+.cart-qty span{min-width:22px;text-align:center;font-weight:800}
+.cart-empty{opacity:.6;font-size:.95rem;text-align:center;padding:30px 0}
+.cart-total{
+  max-width:600px;margin:14px auto 0;
+  text-align:right;font-weight:800;font-size:1.15rem;
+  color:var(--secondary);
+  border-top:2px solid var(--accent);padding-top:12px;
+  display:none;
+}
+.cart-form{max-width:600px;margin:26px auto 0}
+
+/* ---------- Fiyat güncelleme tarihi ---------- */
+.price-updated{
+  text-align:center;font-size:.85rem;font-weight:700;
+  color:var(--secondary);
+  background:color-mix(in srgb, var(--accent) 14%, #fff);
+  border:1.5px solid var(--accent);border-radius:999px;
+  padding:8px 18px;display:none;width:fit-content;
+  margin:0 auto 28px;
+}
+
+/* ---------- Duyuru & tatil bandı ---------- */
+.top-bar{
+  background:var(--primary);color:#fff;
+  text-align:center;font-weight:700;font-size:.88rem;
+  padding:9px 16px;line-height:1.45;display:none;
+}
+.top-bar.vac{background:var(--accent)}
+
+/* ---------- Sipariş koşulları kutusu ---------- */
+.form-rules-box{
+  border:2px solid var(--primary);border-radius:12px;
+  background:#fff;padding:14px 18px;margin-bottom:16px;
+}
+.form-rules-box h4{
+  font-family:var(--font-head);color:var(--primary);
+  font-size:1.05rem;margin-bottom:8px;
+}
+.form-rules-box ul{
+  margin:0;padding-left:18px;
+  font-size:.9rem;line-height:1.7;
+}
+
+/* ---------- SSS ---------- */
+.faq-wrap{max-width:680px;margin:0 auto}
+.faq-item{
+  background:#fff;border-radius:var(--radius);
+  box-shadow:var(--shadow);margin-bottom:12px;overflow:hidden;
+}
+.faq-item summary{
+  list-style:none;cursor:pointer;
+  padding:16px 18px;min-height:48px;
+  font-weight:800;color:var(--primary);font-size:.98rem;
+  display:flex;align-items:center;justify-content:space-between;gap:10px;
+}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{
+  content:'+';font-size:1.35rem;color:var(--accent);
+  font-weight:800;flex:none;
+}
+.faq-item[open] summary::after{content:'−'}
+.faq-item p{padding:0 18px 16px;font-size:.93rem;opacity:.8}
+
+/* ---------- Logo açılış efekti ---------- */
+.intro-overlay{
+  position:fixed;inset:0;z-index:500;
+  background:var(--bg);
+  display:flex;align-items:center;justify-content:center;
+  transition:opacity .5s ease .35s;
+}
+.intro-overlay.done{opacity:0;pointer-events:none}
+.intro-overlay .intro-box{text-align:center}
+.intro-overlay img{
+  width:116px;height:116px;border-radius:50%;
+  object-fit:cover;border:3px solid var(--accent);
+  margin:0 auto;
+  transition:transform .8s cubic-bezier(.22,.61,.36,1);
+  animation:introPop .5s ease;
+}
+.intro-overlay .intro-hi{
+  font-family:var(--font-head);color:var(--primary);
+  font-size:1.3rem;font-weight:700;margin-top:14px;
+  transition:opacity .3s;
+}
+@keyframes introPop{
+  from{transform:scale(.6);opacity:0}
+  to{transform:scale(1);opacity:1}
+}
+
+/* ---------- Form üstü fotoğraf notu kutusu ---------- */
+.form-note-box{
+  border:2.5px solid var(--accent);border-radius:12px;
+  background:color-mix(in srgb, var(--accent) 12%, #fff);
+  padding:14px 16px;margin-bottom:22px;
+  font-weight:800;font-size:.95rem;color:var(--secondary);
+  text-align:center;line-height:1.5;
+}
+
+/* ---------- Tahmini fiyat kutusu ---------- */
+.price-estimate{
+  border:2px solid var(--accent);border-radius:12px;
+  background:color-mix(in srgb, var(--accent) 10%, #fff);
+  padding:14px 16px;margin-bottom:18px;text-align:center;
+  font-size:1rem;color:var(--secondary);font-weight:700;
+}
+.price-estimate b{
+  font-size:1.3rem;color:var(--primary);
+  font-family:var(--font-head);margin-left:6px;
+}
+.price-estimate .pe-note{
+  display:block;font-size:.8rem;opacity:.72;
+  margin-top:5px;font-weight:700;
+}
+
 /* ---------- Sipariş Formu ---------- */
 .order-form{max-width:600px;margin:0 auto}
-.form-photo-note{
-  background:color-mix(in srgb, var(--accent) 15%, #fff);
-  border:2px solid var(--accent);
-  border-radius:12px;
-  padding:16px 20px;
-  text-align:center;
-  font-weight:800;
-  font-size:1.05rem;
-  color:var(--secondary);
-  margin-bottom:28px;
-  line-height:1.5;
-}
 .form-group{margin-bottom:20px}
 .form-group label{
   display:block;font-weight:700;color:var(--primary);
@@ -356,246 +599,44 @@ footer .credit{margin-top:18px;font-size:.8rem;opacity:.55}
 
 @media (prefers-reduced-motion: reduce){
   .reveal{opacity:1;transform:none;transition:none}
+  .cart-panel{transition:none}
+  .cart-badge.pop{animation:none}
+  .intro-overlay{display:none}
   html{scroll-behavior:auto}
 }
 
-/* ---------- Breakpoints ---------- */
+/* ---------- Breakpoints (sadece 2 tane, mobile-first) ---------- */
 @media (min-width:640px){
   section{padding:72px 32px}
 }
 @media (max-width:480px){
-  .hero .btn+.btn{margin-left:0;margin-top:10px}
-  .hero .btn{width:100%;justify-content:center}
-  header{padding:10px 14px;gap:8px}
-  .brand{font-size:1.02rem;white-space:nowrap}
-  #brandLogo{width:36px !important;height:36px !important}
-  header nav a:not(.header-cta){display:none}
-  .header-cta{padding:8px 14px;font-size:.82rem;white-space:nowrap}
-}
-</style>
-</head>
-<body>
+        const noteHtml = C.orderForm.priceNote
+        ? `<span class="pe-note">${C.orderForm.priceNote}</span>` : '';
+      el.innerHTML = t === null
+        ? `Tahmini Fiyat:<b>Şef belirleyecektir</b>${noteHtml}`
+        : `Tahmini Fiyat:<b>${t.toLocaleString('tr-TR')} TL</b>${noteHtml}`;
+    }
+    if (pricingOn) {
+      document.getElementById('ofPortion').addEventListener('change', updateEstimate);
+      document.getElementById('ofFlavors').addEventListener('change', updateEstimate);
+      updateEstimate();
+    }
 
-<header>
-  <span style="display:flex;align-items:center;gap:10px">
-    <img id="brandLogo" alt="" style="display:none;width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid var(--accent)">
-    <span class="brand" data-bind="name"></span>
-  </span>
-  <nav style="display:flex;gap:14px;align-items:center">
-    <a href="#menu" style="font-weight:700;font-size:.9rem;color:var(--primary)">Menü</a>
-    <a href="#siparis" style="font-weight:700;font-size:.9rem;color:var(--primary)">Sipariş</a>
-    <a class="header-cta" href="#siparis">Sipariş Ver</a>
-  </nav>
-</header>
+    if (hasWedding) {
+      document.getElementById('ofType').addEventListener('change', function() {
+        document.getElementById('ofPortion').innerHTML =
+          this.value === 'dugun'
+            ? mkPortions(C.orderForm.weddingPortions)
+            : mkPortions(C.orderForm.portions);
+        if (pricingOn) updateEstimate();
+      });
+    }
 
-<div class="hero">
-  <h1 data-bind="name"></h1>
-  <p data-bind="tagline"></p>
-  <a class="btn btn-form" href="#siparis">
-    Sipariş Formunu Gör
-  </a>
-  <a class="btn btn-tel" id="heroTel" href="#">Hemen Ara</a>
-</div>
-
-<section id="urunler">
-  <h2 class="section-title reveal">Ürünlerimiz</h2>
-  <p class="section-sub reveal">Her gün taze, el yapımı</p>
-  <div class="grid" id="productGrid"></div>
-</section>
-
-<section id="menu">
-  <h2 class="section-title reveal">Menü & Fiyatlar</h2>
-  <p class="section-sub reveal" id="menuSub"></p>
-  <div class="menu-wrap" id="menuWrap"></div>
-  <p class="menu-note reveal">Fiyatlarımız güncel olup KDV dahildir.</p>
-</section>
-
-<section id="siparis" style="display:none">
-  <h2 class="section-title reveal">Özel Pasta Siparişi</h2>
-  <p class="section-sub reveal">Formu doldurun, WhatsApp'tan hemen iletilsin</p>
-  <div class="order-form reveal" id="orderForm"></div>
-</section>
-
-<section class="about">
-  <div class="about-inner">
-    <h2 class="section-title reveal">Hikâyemiz</h2>
-    <p class="reveal" data-bind="about"></p>
-  </div>
-</section>
-
-<section id="subeler">
-  <h2 class="section-title reveal">Şubelerimiz</h2>
-  <p class="section-sub reveal">Size en yakın şubemize bekleriz</p>
-  <div class="grid" id="branchGrid"></div>
-</section>
-
-<footer>
-  <span class="brand" data-bind="name"></span>
-  <p>Instagram: <a id="igLink" href="#" target="_blank" rel="noopener">@<span data-bind="instagram"></span></a></p>
-  <p style="margin-top:6px"><a id="footerTel" href="#">Telefon ile ulaşın</a></p>
-  <p class="credit">Tasarım: Yusuf Yozgatlı</p>
-</footer>
-
-<a class="wa-float" id="floatWa" href="#" aria-label="WhatsApp ile iletişim">
-  <svg viewBox="0 0 32 32" fill="currentColor"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.6.8 5 2.3 7L4 29l7.3-2.2c1.9 1 4 1.6 6.2 1.6 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.8c-2 0-3.9-.6-5.5-1.6l-.4-.2-4.1 1.2 1.2-4-.3-.4C5.7 18.2 5 16.7 5 15 5 9 9.9 4.1 16 4.1S27 9 27 15s-4.9 9.8-11 9.8zm5.6-7.2c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.6c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.6 0-.2-.7-1.7-1-2.3-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.7s1.2 3.1 1.3 3.3c.2.2 2.3 3.6 5.7 5 .8.3 1.4.5 1.9.7.8.2 1.5.2 2.1.1.6-.1 1.8-.8 2.1-1.5.3-.7.3-1.3.2-1.5-.1-.1-.3-.2-.6-.4z"/></svg>
-</a>
-
-<script>
-/* ═══════════ RENDER — dokunma ═══════════ */
-(function(){
-  const C = CONFIG;
-
-  // Renkleri :root'a bas
-  const r = document.documentElement.style;
-  for (const [k,v] of Object.entries(C.colors))
-    r.setProperty('--'+ (k==='bg'?'bg':k==='text'?'text':k), v);
-
-  document.getElementById('pageTitle').textContent =
-    C.name + " | " + C.tagline;
-
-  // Logo (varsa göster)
-  if (C.logo) {
-    const lg = document.getElementById('brandLogo');
-    lg.src = C.logo;
-    lg.style.display = 'block';
-  }
-
-  // data-bind alanları
-  document.querySelectorAll('[data-bind]').forEach(el=>{
-    el.textContent = C[el.dataset.bind] ?? '';
-  });
-
-  // WhatsApp linkleri (genel soru için float + footer)
-  const wa = msg => `https://wa.me/${C.whatsapp}?text=${encodeURIComponent(msg)}`;
-  const genelMsg = `Merhaba, ${C.name} hakkında bilgi almak istiyorum.`;
-  document.getElementById('floatWa').href = wa(genelMsg);
-
-  // Telefon linkleri
-  ['heroTel','footerTel'].forEach(id=>{
-    document.getElementById(id).href = 'tel:' + C.phone;
-  });
-  document.getElementById('igLink').href = 'https://instagram.com/' + C.instagram;
-
-  // Ürün kartları — butonlar sipariş formuna yönlendirir
-  const pg = document.getElementById('productGrid');
-  C.products.forEach((p,i)=>{
-    const card = document.createElement('div');
-    card.className = 'card reveal';
-    card.style.transitionDelay = (i%3)*90 + 'ms';
-    const imgHtml = p.img
-      ? `<img class="card-img" src="${p.img}" alt="${p.name}" loading="lazy">`
-      : `<div class="card-img" role="img" aria-label="${p.name}"></div>`;
-    card.innerHTML = `
-      ${imgHtml}
-      <div class="card-body">
-        <h3>${p.name}</h3>
-        <p>${p.desc}</p>
-        <a class="card-order" href="#siparis">
-          Sipariş Ver
-        </a>
-      </div>`;
-    pg.appendChild(card);
-  });
-
-  // Dijital menü
-  const menuSubEl = document.getElementById('menuSub');
-  if (menuSubEl) menuSubEl.textContent = C.menuNote || '';
-  const mw = document.getElementById('menuWrap');
-  (C.menu || []).forEach(cat=>{
-    const div = document.createElement('div');
-    div.className = 'menu-cat reveal';
-    div.innerHTML = `<h3>${cat.category}</h3>` +
-      cat.items.map(it=>`
-        <div class="menu-item">
-          <span>${it.name}</span>
-          <span class="dots"></span>
-          <span class="price">${it.price}</span>
-        </div>` +
-        (it.desc ? `<div class="menu-desc">${it.desc}</div>` : '')
-      ).join('');
-    mw.appendChild(div);
-  });
-
-  // Şube kartları
-  const bg = document.getElementById('branchGrid');
-  C.branches.forEach((b,i)=>{
-    const el = document.createElement('div');
-    el.className = 'branch reveal';
-    el.style.transitionDelay = (i%3)*90 + 'ms';
-    el.innerHTML = `
-      <h3>${b.name}</h3>
-      <p>${b.address}</p>
-      <p class="hours">🕐 ${b.hours}</p>
-      <div class="branch-actions">
-        <a href="${b.mapsUrl}" target="_blank" rel="noopener">Yol Tarifi</a>
-        <a href="tel:${b.phone}">Ara</a>
-      </div>`;
-    bg.appendChild(el);
-  });
-
-  // Özel pasta sipariş formu
-  if (C.orderForm) {
-    document.getElementById('siparis').style.display = '';
-    const of = document.getElementById('orderForm');
-    const branchOpts = C.branches.map(b => `<option value="${b.name}">${b.name}</option>`).join('');
-    const portionOpts = C.orderForm.portions.map(p => `<option value="${p}">${p} Kişilik</option>`).join('');
-    const creamOpts = C.orderForm.creams.map(c => `<option value="${c}">${c}</option>`).join('');
-    const flavorBoxes = C.orderForm.flavors.map((f,i) =>
-      `<label><input type="checkbox" name="flavor" value="${f}"> ${f}</label>`
-    ).join('');
-
-    of.innerHTML = `
-      <div class="form-photo-note">
-        Aklınızdaki pastanın fotoğrafını sipariş sonrası WhatsApp üzerinden göndermeyi unutmayın!
-      </div>
-      <div class="form-group">
-        <label>Ad Soyad</label>
-        <input type="text" id="ofName" placeholder="Adınız Soyadınız">
-      </div>
-      <div class="form-group">
-        <label>Telefon</label>
-        <input type="tel" id="ofPhone" placeholder="(5XX) XXX XX XX">
-      </div>
-      <div class="form-group">
-        <label>Teslim Tarihi</label>
-        <input type="date" id="ofDate">
-      </div>
-      <div class="form-group">
-        <label>Porsiyon Sayısı</label>
-        <select id="ofPortion">${portionOpts}</select>
-      </div>
-      <div class="form-group">
-        <label>İçerik Seçimi</label>
-        <div class="checkbox-grid" id="ofFlavors">${flavorBoxes}</div>
-      </div>
-      <div class="form-group">
-        <label>Kek & Krema</label>
-        <select id="ofCream">${creamOpts}</select>
-      </div>
-      <div class="form-group">
-        <label>Teslim Alınacak Şube</label>
-        <select id="ofBranch">${branchOpts}</select>
-      </div>
-      <div class="form-group">
-        <label>Mesajınız</label>
-        <textarea id="ofMsg" placeholder="Özel isteğinizi yazabilirsiniz..."></textarea>
-      </div>
-      <button type="button" class="btn-order" id="ofSubmit">
-        WhatsApp'tan Gönder
-      </button>
-      <p style="text-align:center;margin-top:14px;font-size:.9rem;opacity:.7">
-        İstediğiniz pasta modelinin fotoğrafını WhatsApp üzerinden iletebilirsiniz.
-      </p>
-      <div class="form-notes" id="ofNotes"></div>
-    `;
-
-    // Form notları
     const notesEl = document.getElementById('ofNotes');
     if (C.orderForm.notes) {
       notesEl.innerHTML = C.orderForm.notes.join('<br>');
     }
 
-    // Submit → WhatsApp (emojisiz mesaj metni)
     document.getElementById('ofSubmit').addEventListener('click', function() {
       const name = document.getElementById('ofName').value.trim();
       const phone = document.getElementById('ofPhone').value.trim();
@@ -608,10 +649,17 @@ footer .credit{margin-top:18px;font-size:.8rem;opacity:.55}
       const flavors = [...document.querySelectorAll('#ofFlavors input:checked')]
         .map(cb => cb.value);
 
+      if (C.vacationLock && C.vacationNote) { alert(C.vacationNote); return; }
       if (!name) { alert('Lütfen adınızı girin.'); return; }
       if (!date) { alert('Lütfen teslim tarihini seçin.'); return; }
+      const dEl = document.getElementById('ofDate');
+      if (dEl.min && date < dEl.min) {
+        alert('Siparişler en az ' + C.orderForm.minDaysAhead + ' gün önceden alınmaktadır. Lütfen daha ileri bir tarih seçin.');
+        return;
+      }
 
-      let text = `*ÖZEL PASTA SİPARİŞİ*\n\n`;
+      const isWedding = hasWedding && document.getElementById('ofType').value === 'dugun';
+      let text = isWedding ? `*DÜĞÜN PASTASI SİPARİŞİ*\n\n` : `*ÖZEL PASTA SİPARİŞİ*\n\n`;
       text += `*Ad Soyad:* ${name}\n`;
       if (phone) text += `*Telefon:* ${phone}\n`;
       text += `*Teslim Tarihi:* ${date}\n`;
@@ -619,6 +667,14 @@ footer .credit{margin-top:18px;font-size:.8rem;opacity:.55}
       if (flavors.length) text += `*İçerik:* ${flavors.join(', ')}\n`;
       text += `*Kek & Krema:* ${cream}\n`;
       text += `*Şube:* ${branch}\n`;
+      if (pricingOn) {
+        const est = calcEstimate();
+        if (est !== null) {
+          text += `*Tahmini Fiyat:* ${est.toLocaleString('tr-TR')} TL`;
+          if (C.orderForm.priceNote) text += ` (${C.orderForm.priceNote})`;
+          text += `\n`;
+        }
+      }
       if (msg) text += `*Not:* ${msg}\n`;
       text += `\nAklınızdaki pastanın örnek fotoğrafı varsa bu mesajın ardından gönderebilirsiniz.`;
 
@@ -626,7 +682,88 @@ footer .credit{margin-top:18px;font-size:.8rem;opacity:.55}
     });
   }
 
-  // Scroll reveal
+  if (Array.isArray(C.faq) && C.faq.length) {
+    document.getElementById('sss').style.display = '';
+    document.getElementById('faqWrap').innerHTML = C.faq.map(f =>
+      `<details class="faq-item"><summary>${f.q}</summary><p>${f.a}</p></details>`
+    ).join('');
+  }
+
+  const mda = (C.orderForm && C.orderForm.minDaysAhead) || 0;
+  if (mda > 0) {
+    const d = new Date();
+    d.setDate(d.getDate() + mda);
+    const min = d.toISOString().slice(0, 10);
+    ['ofDate', 'cfDate'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.min = min;
+    });
+  }
+
+  const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (C.intro && C.logo && !reducedMotion) {
+    let shown = false;
+    try { shown = sessionStorage.getItem('introShown') === '1'; } catch(e) {}
+    if (!shown) {
+      try { sessionStorage.setItem('introShown', '1'); } catch(e) {}
+      const ov = document.createElement('div');
+      ov.className = 'intro-overlay';
+      ov.innerHTML = `<div class="intro-box"><img src="${C.logo}" alt=""><p class="intro-hi">Hoş Geldiniz</p></div>`;
+      document.body.appendChild(ov);
+      const img = ov.querySelector('img');
+      setTimeout(() => {
+        const target = document.getElementById('brandLogo');
+        if (target && target.style.display !== 'none') {
+          const tr = target.getBoundingClientRect();
+          const ir = img.getBoundingClientRect();
+          const dx = (tr.left + tr.width/2) - (ir.left + ir.width/2);
+          const dy = (tr.top + tr.height/2) - (ir.top + ir.height/2);
+          img.style.transform = `translate(${dx}px, ${dy}px) scale(${tr.width / ir.width})`;
+        }
+        ov.querySelector('.intro-hi').style.opacity = '0';
+        ov.classList.add('done');
+        setTimeout(() => ov.remove(), 950);
+      }, 1000);
+    }
+  }
+
+  if (C.particles && !reducedMotion) {
+    const SETS = {
+      kar:      ['❄️','❅','❆'],
+      yaprak:   ['🌿','🍃','☘️'],
+      meyve:    ['🍓','🍒','🥝','🍑','🍇'],
+      sonbahar: ['🍂','🍁']
+    };
+    const autoSet = () => {
+      const m = new Date().getMonth() + 1;
+      if (m === 12 || m <= 2) return SETS.kar;
+      if (m <= 5) return SETS.yaprak;
+      if (m <= 9) return SETS.meyve;
+      return SETS.sonbahar;
+    };
+    const set = C.particles === 'auto' ? autoSet() : (SETS[C.particles] || autoSet());
+    let live = 0;
+    document.addEventListener('pointerdown', e => {
+      const n = 4 + Math.floor(Math.random() * 3);
+      for (let i = 0; i < n && live < 20; i++) {
+        live++;
+        const s = document.createElement('span');
+        s.textContent = set[Math.floor(Math.random() * set.length)];
+        s.style.cssText = `position:fixed;left:${e.clientX}px;top:${e.clientY}px;` +
+          `z-index:400;pointer-events:none;font-size:${18 + Math.random()*10}px;` +
+          `will-change:transform,opacity`;
+        document.body.appendChild(s);
+        const dx = (Math.random() - .5) * 130;
+        const anim = s.animate([
+          { transform: 'translate(-50%,-50%) rotate(0deg) scale(1)', opacity: 1 },
+          { transform: `translate(calc(-50% + ${dx}px), ${90 + Math.random()*80}px)` +
+            ` rotate(${(Math.random()-.5)*240}deg) scale(.2)`, opacity: 0 }
+        ], { duration: 2350 + Math.random()*400, easing: 'cubic-bezier(.25,.46,.45,.94)' });
+        anim.onfinish = () => { s.remove(); live--; };
+      }
+    }, { passive: true });
+  }
+
   const io = new IntersectionObserver(entries=>{
     entries.forEach(e=>{
       if(e.isIntersecting){
@@ -640,3 +777,4 @@ footer .credit{margin-top:18px;font-size:.8rem;opacity:.55}
 </script>
 </body>
 </html>
+  
